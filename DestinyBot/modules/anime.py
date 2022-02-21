@@ -163,7 +163,7 @@ query ($id: Int,$search: String) {
     }
 """
 
-AWAKE_MSG = f"""**✩✮ ɪ ᴀᴍ ᴜɴᴍᴇɪ, ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ. **
+AWAKE_MSG = f"""**♡ I,m ɴᴇʀᴏ ʀᴏʙᴏᴛ 音露** \n\n**
 
 **Python Version :** `{py_ver()}`
 
@@ -373,17 +373,18 @@ def manga(update: Update, context: CallbackContext):
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(buttons))
 
+#Modified by github.com/DarkSoulxUltra
 def awake(update: Update, context: CallbackContext):
     message = update.effective_message
-    IMAGE = "https://telegra.ph/file/a4f96c30605ece22664ea.jpg"
+    IMAGE = "https://telegra.ph/file/5b6cde48c061a49332b6a.jpg"
     msg = ""
     msg += f"{AWAKE_MSG}"
-    support = "t.me/unmei_support"
-    owner = "t.me/yameteee_yamete_kudasai"
+    support = "t.me/nero_support"
+    updates = "t.me/nero_updates"
     buttons = [
 	[
-            InlineKeyboardButton("『 ⚡ Support ⚡ 』", url=support),
-	    InlineKeyboardButton("『 ♥ Maestro ♥ 』", url=owner)
+            InlineKeyboardButton("『🚑 Support 』", url=support),
+	    InlineKeyboardButton("『📢 Updates』", url=updates)
         ]
     ]
     update.effective_message.reply_photo(
@@ -476,6 +477,9 @@ def user(update: Update, context: CallbackContext):
         disable_web_page_preview=False)
     progress_message.delete()
 
+# This request function is made by DarkSoulxUltra, this line won't affect a bit to you. So for the sake of God, don't remove it.
+# I've spent so much time to design this function by myself, you can exclude the entire function by removing it from dispatcher, handlers and command list as well
+# Also you can remove the below function if there is your own request bot.
 def request(update: Update, context: CallbackContext):
     message = update.effective_message
     #args = context.args
@@ -491,7 +495,7 @@ def request(update: Update, context: CallbackContext):
     to_send = " ".join(ANIME_NAME)
     #req_by = f"<b>Requested By:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
     to_send = to_send.replace("/","#")
-    to_send = to_send.replace("@Destiny_x_Bot","")
+    to_send = to_send.replace("@secre_swallowtailbot","")
 
     if len(to_send.split(" ")) >= 2:
         try:
