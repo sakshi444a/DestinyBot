@@ -295,26 +295,26 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\n This person is my Maestro - <b>'Takt'</b>."
+        text += "\n\n This person is my <b>'Prince Lemiel'</b>."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is member of the 'Conductors', a Dev level member."
+        text += "\n\nThis user is Mage of the 'Arcane Stage'."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThe Disaster level of this person is 'Musicarts', a Dragon."
+        text += "\n\nThe Disaster level of this person is 'Zero Stage Mage'."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThe Disaster level of this person is 'D2 Slayer', that's basically a Demon."
+        text += "\n\nThe Disaster level of this person is 'First Stage Mage'."
         disaster_level_present = True 
     elif user.id in TIGERS:
-        text += "\n\nThe Disaster level of this person is 'Defender', a Tiger, Rawrrr!!!."
+        text += "\n\nThe Disaster level of this person is 'Support Mage'."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nThe Disaster level of this person is 'Melody Creator', Haah!! a Wolf."
+        text += "\n\nThe Disaster level of this person is 'Saint Stage Mage'."
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/unmei_updates/4">Ⓤ</a>]'.format(
+        text += ' [<a href="https://t.me/nero_updates/4">✮</a>]'.format(
             bot.username,
         )
 
@@ -353,7 +353,7 @@ def info(update: Update, context: CallbackContext):
                             InlineKeyboardButton(
                                 "Health", url="https://t.me/unmei_updates/5"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/unmei_updates/4")
+                                "Disaster", url="https://t.me/nero_updates/4")
                         ],
                     ]
                 ),
@@ -448,8 +448,8 @@ def stats(update, context):
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + f"\n\n[➥ Support](https://t.me/{SUPPORT_CHAT}) | [➲ Updates](https://t.me/unmei_updates)\n\n"
-            + "╘══ 『 by [𝚂𝙷𝙾𝚃𝙾](https://t.me/yameteee_yamete_kudasai) 』\n",
+            + f"\n\n[➥ Support](https://t.me/{SUPPORT_CHAT}) | [➲ Updates](https://t.me/nero_updates)\n\n"
+            + "╘══ 『 by [Nαɾυƚσ](https://t.me/lord_Nanadaime) 』\n",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
@@ -461,9 +461,9 @@ def stats(update, context):
                         "\n*Bot statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + f"\n\n➥ [Support](https://t.me/{SUPPORT_CHAT}) | ➲ [Updates](https://t.me/unmei_updates/4)\n\n"
+                    + f"\n\n➥ [Support](https://t.me/{SUPPORT_CHAT}) | ➲ [Updates](https://t.me/nero_updates)\n\n"
                 )
-                + "╘══『 by [𝚂𝙷𝙾𝚃𝙾](https://t.me/yameteee_yamete_kudasai) 』\n"
+                + "╘══『 by [Nαɾυƚσ](https://t.me/lord_Nanadaime) 』\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
