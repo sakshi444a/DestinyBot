@@ -69,14 +69,12 @@ def no_longer_afk(update: Update, context: CallbackContext):
                 "Hehe, {} is back now, how tf you were even busy?",
                 "Guys, {} got a girlfried, that's why he was busy.",
                 "{}, chotto matte!! you came out of no where!!",
-                "{}, Spammer D2 arrived, lemme grab my ban hammer.",
                 "{}, go back to sleep!!!",
                 "Were you playing Poker, {}? A Strip Poker, hehe!!!",
                 "Yeah, pro like {} arrived again, beware of some noobs!!!",
                 "Dear {}, Are you a BTS Lover. I know you were watching it?",
                 "{}, I know were watching something dirty, that's why you were away.",
                 "Why came back, {}? Girls are away from chat already.",
-                "Okairinasai {} Nii-Chan!!"
                 "Where is {}?\nIn the chat!",
                 "{}, were you doing something lewd?\nI just saw a white stain on your T-shirt."
             ]
