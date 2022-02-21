@@ -102,7 +102,7 @@ async def inline_help_func(__HELP__):
             input_message_content=InputTextMessageContent(
                 "**__Click A Button To Get Started.__**"
             ),
-            thumb_url="https://telegra.ph/file/b2d2b0111486e0c0bdb1c.jpg",
+            thumb_url="https://telegra.ph/file/137b932ad1bf53465fe51.jpg",
             reply_markup=buttons,
         ),
     ]
@@ -115,27 +115,27 @@ async def alive_function(answers):
     bot_state = "Dead" if not await app.get_me() else "Alive"
     ubot_state = "Dead" if not await ubot2.get_me() else "Alive"
     buttons.add(
-        InlineKeyboardButton("Main bot", url="https://t.me/Destiny_x_Bot"),
+        InlineKeyboardButton("Main bot", url="https://t.me/secre_swallowtailbot"),
         InlineKeyboardButton(
             "Go Inline!", switch_inline_query_current_chat=""
         ),
     )
 
     msg = f"""
-**[Unmei Robot ❤️](https://t.me/unmei_support):**
+**[Nero Robot ❤️](https://t.me/nero_support):**
 **MainBot:** `{bot_state}`
 **UserBot:** `{ubot_state}`
 **Python:** `{pyver.split()[0]}`
 **Pyrogram:** `{pyrover}`
 **MongoDB:** `{mongover}`
 **Platform:** `{sys.platform}`
-**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/yametee_yamete_kudasai)
+**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/lord_Nanadaime)
 """
     answers.append(
         InlineQueryResultArticle(
             title="Alive",
             description="Check Bot's Stats",
-            thumb_url="https://telegra.ph/file/b2d2b0111486e0c0bdb1c.jpg",
+            thumb_url="https://telegra.ph/file/137b932ad1bf53465fe51.jpg",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
