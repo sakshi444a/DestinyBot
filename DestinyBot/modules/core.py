@@ -9,7 +9,7 @@ from DestinyBot import OWNER_ID, DEV_USERS
 from DestinyBot import TEMP_DOWNLOAD_DIRECTORY as path
 from DestinyBot import TEMP_DOWNLOAD_DIRECTORY
 from datetime import datetime
-water = './DestinyBot/resources/cosette.destiny-20220205-0024.jpg'
+water = './DestinyBot/resources/secre_swallowtail.jpg'
 client = tbot
 
 @register(pattern=r"^/send ?(.*)")
