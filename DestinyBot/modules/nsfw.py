@@ -24,7 +24,7 @@ def add_nsfw(update: Update, context: CallbackContext):
     is_nsfw = sql.is_nsfw(chat.id)
     if not is_nsfw:
         sql.set_nsfw(chat.id)
-        msg.reply_text("Horny Mode Activated!!!")
+        msg.reply_text("NSFW Mode Activated!!!")
         message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
             f"ACTIVATED_NSFW\n"
@@ -32,7 +32,7 @@ def add_nsfw(update: Update, context: CallbackContext):
         )
         return message
     else:
-        msg.reply_text("You are already Horny here, NSFW is already ACTIVATED!")
+        msg.reply_text("NSFW is already ACTIVATED!")
         return ""
 
 
@@ -44,11 +44,11 @@ def rem_nsfw(update: Update, context: CallbackContext):
     user = update.effective_user
     is_nsfw = sql.is_nsfw(chat.id)
     if not is_nsfw:
-        msg.reply_text("You look innocent to me by following the morales. NSFW Mode is already Deactivated")
+        msg.reply_text("NSFW Mode is already Deactivated")
         return ""
     else:
         sql.rem_nsfw(chat.id)
-        msg.reply_text("Finished already? Rolled Back to SFW Mode!")
+        msg.reply_text("Rolled Back to SFW Mode!")
         message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
             f"DEACTIVATED_NSFW\n"
