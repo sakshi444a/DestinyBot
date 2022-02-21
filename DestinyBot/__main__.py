@@ -85,50 +85,55 @@ first_name_pm = ""
 
 PM_START_TEXT = """
 ────「 {} 」────
-*Hey there {}!,*
-* I am an advance group management bot with a lots of Features. My Anime theme is from Takt OP. Destiny *
-
-➳➳➳➳➳➳➳➳➳➳➳➳➳➳➳
-ღღ    *Uptime:* `{}`    ღღ
-➳➳➳➳➳➳➳➳➳➳➳➳➳➳➳
-
-♡ Try The Help Button below To Know My Abilities[.](https://telegra.ph/file/9473d3f0e989ee67bb4cd.jpg) ♡
+*Hey! {},*
+* I am an Anime themed advance group management bot with a lots of Features.*
+➖➖➖➖➖➖➖➖➖➖➖
+• *Uptime:* `{}`
+➖➖➖➖➖➖➖➖➖➖➖
+➛ Try The Help Buttons Below To Know My Abilities[.](https://telegra.ph/file/ecca402e5503f6ca482d4.mp4) ××
 """
 
 
 HELP_STRINGS = """
-Hello there, I'm Unmei Bot! Some people do call me Destiny.
-To make me functional, make sure that i have enough rights in your group[.](https://telegra.ph/file/26c430892d2ce0e407443.jpg)
+Hey there, I'm Nero Robot !
+To make me functional, make sure that i have enough rights in your group.
 Helpful commands:
-
-- /start: It will starts me! You've probably used this, as you are here now.
-
+- /start: Starts me! You've probably already used this.
+- /help: Sends this message; I'll tell you more about myself!
+- /donate: Gives you info on how to support me and my creator.
 All commands can be used with the following: / !
 List of all the Modules:
 """.format(
-    dispatcher.bot.first_name, "" if not ALLOW_EXCL else "📝All commands can either be used with / or !.")
+    dispatcher.bot.first_name,
+    "" if not ALLOW_EXCL else "📝All commands can either be used with / or !.",
+)
+
 buttons = [
     [
-        InlineKeyboardButton(text=f"『 ➕ Add Me 』",url=f"https://telegram.dog/Destiny_x_Bot?startgroup=true"),
-        InlineKeyboardButton(text="『 🙇 Help 』", callback_data="help_back")
-    ],
-    [
-        InlineKeyboardButton(text="『 🌟 Anime Channel 』",url="https://t.me/trending_anime_series"),
-        InlineKeyboardButton(text="『 ❔ Otaku Talks 』", url="https://t.me/tas_support")
-    ],
-    [
-        InlineKeyboardButton(text="『 🚑 Support 』",url=f"https://telegram.dog/unmei_support"),
-        InlineKeyboardButton(text="『 📢 Updates 』",url="https://t.me/unmei_updates")
+                        InlineKeyboardButton(
+                            text=f"Add Nero To Your Group",
+                            url=f"https://telegram.dog/secre_swallowtailbot?startgroup=true")
+                    ],
+                   [
+                       InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
+                       InlineKeyboardButton(text="❔ Chit Chat", url="https://t.me/OtaKu_Gang1"),
+                       InlineKeyboardButton(text="[► Inline ◄]", switch_inline_query_current_chat=""),
+                     ],
+                    [                  
+                       InlineKeyboardButton(
+                             text="🚑 Support",
+                             url=f"https://telegram.dog/nero_support"),
+                       InlineKeyboardButton(
+                             text="📢 Updates",
+                             url="https://t.me/nero_updates")
+                     ], 
     ]
-]
 
-GROUP_START_IMG = "https://telegra.ph/file/2d9b9613c4c7f8310c6d1.mp4"
-DESTINY_IMG = "https://telegra.ph/file/a4f96c30605ece22664ea.jpg"
+GROUP_START_IMG = "https://telegra.ph/file/0c0f6806f517f98edd2f9.mp4"
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting @yameteee_yamete_kudasai \
- Supporting isn't always financial! \
- Those who cannot provide monetary support are welcome to help us develop the bot at ."""
+FLARE_PHOTO = "https://telegra.ph/file/5b6cde48c061a49332b6a.jpg"
+
+DONATE_STRING = """Thanks For Your Support Though My Creator Doesn't Need Support Monetarily, Still Contact Him For More Info:- @lord_Nanadaime """
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -244,7 +249,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "👋 Hi {}\nI won[']({})t sleep yet, because I believe someone is waiting for my Music.\n\n Uptime - {}".format(update.effective_user.first_name,GROUP_START_IMG,get_readable_time((time.time() - StartTime))),
+            "👋 Hi {}\nI won[']({})t sleep until I satisfy you!\n<b>Uptime:</b> <code>{}</code>.\nUptime - {}".format(update.effective_user.first_name,GROUP_START_IMG,get_readable_time((time.time() - StartTime))),
             parse_mode=ParseMode.MARKDOWN
        )
 
@@ -751,7 +756,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 866830519:
+        if OWNER_ID != 5087111512:
             update.effective_message.reply_text(
                 "I'm free for everyone ❤️ If you wanna make me smile, just join"
                 "[My Channel]({})".format(DONATION_LINK),
@@ -799,8 +804,7 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.sendMessage(
-                f"@{SUPPORT_CHAT}", 
-                "👋 Hey there,\nI['](https://telegra.ph/file/fdaa7b5fbf2ebb380e714.mp4)m awake again.",
+                f"@{SUPPORT_CHAT}", "[hey! I am back from OYO!!](https://telegra.ph/file/629da0036dc91a0f34898.jpg),
                 parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
