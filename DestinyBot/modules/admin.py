@@ -71,7 +71,7 @@ def setchatpic(update: Update, context: CallbackContext):
         elif msg.reply_to_message.document:
             pic_id = msg.reply_to_message.document.file_id
         else:
-            msg.reply_text("Gomenne! But you can only set some photo as chat pic!")
+            msg.reply_text("Sorry! But you can only set some photo as chat pic!")
             return
         dlmsg = msg.reply_text("Just a sec...")
         tpic = context.bot.get_file(pic_id)
@@ -97,11 +97,11 @@ def rmchatpic(update: Update, context: CallbackContext):
     user = update.effective_user
 
     if user_can_changeinfo(chat, user, context.bot.id) is False:
-        msg.reply_text("Dude! You don't have enough rights to delete group photo.")
+        msg.reply_text("You don't have enough rights to delete group photo.")
         return
     try:
         context.bot.delete_chat_photo(int(chat.id))
-        msg.reply_text("Successfully deleted chat's profile photo! Sed Lyfe.")
+        msg.reply_text("Successfully deleted chat's profile photo.")
     except BadRequest as excp:
         msg.reply_text(f"Error! {excp.message}.")
         return
@@ -193,7 +193,7 @@ def promote(update: Update, context: CallbackContext) -> str:
         return
 
     if user_member.status in ('administrator', 'creator'):
-        message.reply_text("Wakaranai!! How am I meant to promote someone that's already an admin?")
+        message.reply_text("How am I meant to promote someone that's already an admin?")
         return
 
     if user_id == bot.id:
