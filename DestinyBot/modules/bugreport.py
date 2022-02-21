@@ -1,3 +1,6 @@
+# This entire module is made by DarkSoulxUltra, It is helpful for the support team to get the list of bugs from the users itself
+# Add a key SUPPORT_CHAT_ID var with your bug collection channel id as value in the Heroku vars, that's it.
+# Don't remove the comments as they won't affect your code, but atleast learn to give credits to someone's hard work, or be a moron if you want to be.
 import datetime
 from telegram import TelegramError
 from DestinyBot import dispatcher, SUPPORT_CHAT_ID
@@ -21,7 +24,7 @@ def bug(update: Update, context: CallbackContext):
     to_send = " ".join(BUG_DETAILS)
     #req_by = f"<b>Requested By:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
     to_send = to_send.replace("/","#")
-    to_send = to_send.replace("@Destiny_x_Bot","")
+    to_send = to_send.replace("@secre_swallowtailbot","")
 
     if len(to_send.split(" ")) >= 2:
         try:
