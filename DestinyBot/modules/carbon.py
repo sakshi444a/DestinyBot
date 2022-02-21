@@ -24,16 +24,16 @@ async def carbon_func(_, message):
     carbon.close()
 
 
-MEMEK = "https://telegra.ph/file/060ea554c591fc5b0b878.jpg"
+MEMEK = "https://telegra.ph/file/7aaade024878ae262c3b1.jpg"
 
 #@support_plus
 @pbot.on_message(filters.command("repo"))
 async def repo(_, message):
     await message.reply_photo(
         photo=MEMEK,
-        caption=f"""✨ **Hey I'm Unmei Bot** 
+        caption=f"""𓅩 **Hey I'm Secre Swallowtail Bot** 
 
-**Owner : [Shoto](https://t.me/yameteee_yamete_kudasai)**
+**Owner : [Naruto](https://t.me/lord_Nanadaime)**
 **Python Version :** `{y()}`
 **Library Version :** `{o}`
 **Telethon Version :** `{s}`
@@ -45,9 +45,9 @@ async def repo(_, message):
             [
                 [
                     InlineKeyboardButton(
-                        "Repo", url="https://github.com/DarkSoulxUltra/DestinyBot"), 
+                        "Repo", url="https://github.com/Levi-naruto/DestinyBot"), 
                     InlineKeyboardButton(
-                        "Support", url="https://t.me/unmei_support")
+                        "Support", url="https://t.me/nero_support")
                 ]
             ]
         )
