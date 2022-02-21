@@ -73,20 +73,20 @@ def adddev(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if int(user_id) in DEV_USERS:
-        message.reply_text("This member is already a Conductor")
+        message.reply_text("This member is already an Arcane Stage Mage.")
 
     if user_id in DRAGONS:
-        rt += "Requested to promote a Musicart to a Conductor."
+        rt += "Requested to promote a mage from Zero Stage to Arcane Stage."
         data['sudos'].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "Requested to promote a D2 Slayer to a Conductor."
+        rt += "Requested to promote amage from First Stage to Arcane Stage."
         data['supports'].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "Requested to promote a Melody Creator to a Conductor."
+        rt += "Requested to promote a mage from Saint Stage to Arcane Stage."
         data['whitelists'].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -97,11 +97,11 @@ def adddev(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + "\nSuccessfully set Disaster level of {} to Conductor!".format(
+        rt + "\nSuccessfully set Disaster level of {} to Arcane Stage!".format(
             user_member.first_name))
 
     log_message = (
-        f"#ProDeveloper\n"
+        f"#ARCANE\n"
         f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
         f"<b>User:</b> {mention_html(user_member.id, html.escape(user_member.first_name))}"
     )
@@ -133,16 +133,16 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        message.reply_text("This member is already a Musicart")
+        message.reply_text("This member is already a Zero Stage Mage")
         return ""
 
     if user_id in DEMONS:
-        rt += "Requested to promote a D2 Slayer to Musicart."
+        rt += "Requested to promote a mage from First Stage to Zero Stage."
         data['supports'].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "Requested to promote a Melody Creator to Musicart."
+        rt += "Requested to promote a mage from Saint Stage to Zero Stage."
         data['whitelists'].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -153,7 +153,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + "\nSuccessfully set Disaster level of {} to Musicart!".format(
+        rt + "\nSuccessfully set Disaster level of {} to Zero Stage!".format(
             user_member.first_name))
 
     log_message = (
@@ -192,16 +192,16 @@ def addsupport(
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "Requested to demote this Musicart to D2 Slayer"
+        rt += "Requested to demote this mage from Zero Stage to First."
         data['sudos'].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        message.reply_text("This user is already a D2 Slayer.")
+        message.reply_text("This user is already a First Stage Mage.")
         return ""
 
     if user_id in WOLVES:
-        rt += "Requested to Promote this Melody Creator to D2 Slayer"
+        rt += "Requested to promote this mage from Saint Stage to First Stage."
         data['whitelists'].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -212,7 +212,7 @@ def addsupport(
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\n{user_member.first_name} was added as a D2 Slayer!")
+        rt + f"\n{user_member.first_name} was added as a First Stage Mage!")
 
     log_message = (
         f"#SUPPORT\n"
@@ -247,17 +247,17 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "This member is a Musicart, Demoting to Melody Creator."
+        rt += "This Mage is of Zero Stage rank, Demoting to Saint Stage."
         data['sudos'].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "This user is D2 Slayer, Demoting to Melody Creator."
+        rt += "This Mage is of First Stage rank, Demoting to Saint Stage."
         data['supports'].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        message.reply_text("This user is already a Melody Creator.")
+        message.reply_text("This user is already a Saint Stage Mage.")
         return ""
 
     data['whitelists'].append(user_id)
@@ -268,7 +268,7 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
 
     update.effective_message.reply_text(
         rt +
-        f"\nSuccessfully promoted {user_member.first_name} to a Melody Creator!")
+        f"\nSuccessfully promoted {user_member.first_name} to a Saint Stage Mage!")
 
     log_message = (
         f"#WHITELIST\n"
@@ -303,22 +303,22 @@ def addtiger(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "This member is a Musicart, Demoting to Defender."
+        rt += "This Mage is of Zero Stage, Demoting to Support Mage."
         data['sudos'].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "This user is a D2 Slayer, Demoting to Defender."
+        rt += "This user is a First Stage Mage, Demoting to Support Mage."
         data['supports'].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "This user is a Melody Creator, Demoting to Defender."
+        rt += "This user is a Saint Stage Mage, Demoting to Support Mage."
         data['whitelists'].remove(user_id)
         WOLVES.remove(user_id)
 
     if user_id in TIGERS:
-        message.reply_text("This user is already a Defender.")
+        message.reply_text("This user is already a Support Stage Mage.")
         return ""
 
     data['tigers'].append(user_id)
@@ -329,7 +329,7 @@ def addtiger(update: Update, context: CallbackContext) -> str:
 
     update.effective_message.reply_text(
         rt +
-        f"\nSuccessfully promoted {user_member.first_name} to a Defender!"
+        f"\nSuccessfully promoted {user_member.first_name} to a Support Stage Mage!"
     )
 
     log_message = (
@@ -386,7 +386,7 @@ def rmdev(update: Update, context: CallbackContext) -> str:
         return log_message
 
     else:
-        message.reply_text("This user is not a Conductor!")
+        message.reply_text("This Mage is not of an Arcane Stage!")
         return ""
 
 
@@ -430,7 +430,7 @@ def removesudo(update: Update, context: CallbackContext) -> str:
         return log_message
 
     else:
-        message.reply_text("This user is not a Musicart!")
+        message.reply_text("This Mage is not of a Zero Stage!")
         return ""
 
 
@@ -473,7 +473,7 @@ def removesupport(update: Update, context: CallbackContext) -> str:
         return log_message
 
     else:
-        message.reply_text("This user is not a D2 Slayer!")
+        message.reply_text("This Mage is not of a First Stage!")
         return ""
 
 
@@ -515,7 +515,7 @@ def removewhitelist(update: Update, context: CallbackContext) -> str:
 
         return log_message
     else:
-        message.reply_text("This user is not a Melody Creator!")
+        message.reply_text("This Mage is not of a Saint Stage!")
         return ""
 
 
@@ -556,14 +556,14 @@ def removetiger(update: Update, context: CallbackContext) -> str:
 
         return log_message
     else:
-        message.reply_text("This user is not a Defender!")
+        message.reply_text("This user is not a Support Mage!")
         return ""
 
 
 
 @whitelist_plus
 def whitelist(update: Update, context: CallbackContext):
-    reply = "<b>Known as Melody Creators 🐺:</b>\n"
+    reply = "<b>Known as Saint Stage Mages 🐺:</b>\n"
     bot = context.bot
     for each_user in WOLVES:
         user_id = int(each_user)
@@ -579,7 +579,7 @@ def whitelist(update: Update, context: CallbackContext):
 
 @whitelist_plus
 def tigerlist(update: Update, context: CallbackContext):
-    reply = "<b>Known as Defenders :</b>\n"
+    reply = "<b>Known as Support Mages 🐅:</b>\n"
     bot = context.bot
     for each_user in TIGERS:
         user_id = int(each_user)
@@ -595,7 +595,7 @@ def tigerlist(update: Update, context: CallbackContext):
 @whitelist_plus
 def supportlist(update: Update, context: CallbackContext):
     bot = context.bot
-    reply = "<b>Known As D2 Slayers👹:</b>\n"
+    reply = "<b>Known As First Stage Mages👹:</b>\n"
     for each_user in DEMONS:
         user_id = int(each_user)
         try:
@@ -611,7 +611,7 @@ def supportlist(update: Update, context: CallbackContext):
 def sudolist(update: Update, context: CallbackContext):
     bot = context.bot
     true_sudo = list(set(DRAGONS) - set(DEV_USERS))
-    reply = "<b>Known As Musicarts😈:</b>\n"
+    reply = "<b>Known As the Zero Stage Mages🐉:</b>\n"
     for each_user in true_sudo:
         user_id = int(each_user)
         try:
@@ -622,12 +622,11 @@ def sudolist(update: Update, context: CallbackContext):
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
-
 @whitelist_plus
 def devlist(update: Update, context: CallbackContext):
     bot = context.bot
     true_dev = list(set(DEV_USERS) - {OWNER_ID})
-    reply = "<b>Overpowered Conductors which made me work:</b>\n"
+    reply = "<b>Arcane Stage Mages, who can seal my wounds:</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
         try:
@@ -637,28 +636,104 @@ def devlist(update: Update, context: CallbackContext):
             pass
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
+__help__ = f"""
+*⚠️ Notice:*
+Commands listed here only work for users with special access are mainly used for troubleshooting, debugging purposes.
+Group admins/group owners do not need these commands. 
+ ╔ *List all special users:*
+ ╠ `/dragons`*:* Lists all Dragon disasters
+ ╠ `/demons`*:* Lists all Demon disasters
+ ╠ `/tigers`*:* Lists all Tigers disasters
+ ╠ `/wolves`*:* Lists all Wolf disasters
+ ╠ `/heroes`*:* Lists all Hero Association members
+ ╠ `/adddragon`*:* Adds a user to Dragon
+ ╠ `/adddemon`*:* Adds a user to Demon
+ ╠ `/addtiger`*:* Adds a user to Tiger
+ ╠ `/addwolf`*:* Adds a user to Wolf
+ ╚ `Add dev doesnt exist, devs should know how to add themselves`
+ ╔ *Ping:*
+ ╠ `/ping`*:* gets ping time of bot to telegram server
+ ╚ `/pingall`*:* gets all listed ping times
+ ╔ *Broadcast: (Bot owner only)*
+ ╠  *Note:* This supports basic markdown
+ ╠ `/broadcastall`*:* Broadcasts everywhere
+ ╠ `/broadcastusers`*:* Broadcasts too all users
+ ╚ `/broadcastgroups`*:* Broadcasts too all groups
+ ╔ *Groups Info:*
+ ╠ `/groups`*:* List the groups with Name, ID, members count as a txt
+ ╠ `/leave <ID>`*:* Leave the group, ID must have hyphen
+ ╠ `/stats`*:* Shows overall bot stats
+ ╠ `/getchats`*:* Gets a list of group names the user has been seen in. Bot owner only
+ ╚ `/ginfo username/link/ID`*:* Pulls info panel for entire group
+ ╔ *Access control:* 
+ ╠ `/ignore`*:* Blacklists a user from 
+ ╠  using the bot entirely
+ ╠ `/notice`*:* Removes user from blacklist
+ ╚ `/ignoredlist`*:* Lists ignored users
+ ╔ *Module loading:*
+ ╠ `/listmodules`*:* Prints modules and their names
+ ╠ `/unload <name>`*:* Unloads module dynamically
+ ╚ `/load <name>`*:* Loads module
+ ╔ *Speedtest:*
+ ╚ `/speedtest`*:* Runs a speedtest and gives you 2 options to choose from, text or image output
+ ╔ *Global Bans:*
+ ╠ `/gban user reason`*:* Globally bans a user
+ ╚ `/ungban user reason`*:* Unbans the user from the global bans list
+ ╔ *Module loading:*
+ ╠ `/listmodules`*:* Lists names of all modules
+ ╠ `/load modulename`*:* Loads the said module to 
+ ╠   memory without restarting.
+ ╠ `/unload modulename`*:* Loads the said module from
+ ╚   memory without restarting.memory without restarting the bot 
+ ╔ *Remote commands:*
+ ╠ `/rban user group`*:* Remote ban
+ ╠ `/runban user group`*:* Remote un-ban
+ ╠ `/rpunch user group`*:* Remote punch
+ ╠ `/rmute user group`*:* Remote mute
+ ╚ `/runmute user group`*:* Remote un-mute
+ ╔ *Windows self hosted only:*
+ ╠ `/reboot`*:* Restarts the bots service
+ ╚ `/gitpull`*:* Pulls the repo and then restarts the bots service
+ ╔ *Chatbot:* 
+ ╚ `/listaichats`*:* Lists the chats the chatmode is enabled in
+ 
+ ╔ *Debugging and Shell:* 
+ ╠ `/debug <on/off>`*:* Logs commands to updates.txt
+ ╠ `/logs`*:* Run this in support group to get logs in pm
+ ╠ `/eval`*:* Self explanatory
+ ╠ `/sh`*:* Runs shell command
+ ╠ `/shell`*:* Runs shell command
+ ╠ `/clearlocals`*:* As the name goes
+ ╠ `/dbcleanup`*:* Removes deleted accs and groups from db
+ ╚ `/py`*:* Runs python code
+ 
+ ╔ *Global Bans:*
+ ╠ `/gban <id> <reason>`*:* Gbans the user, works by reply too
+ ╠ `/ungban`*:* Ungbans the user, same usage as gban
+ ╚ `/gbanlist`*:* Outputs a list of gbanned users
+Visit @Freia_Support for more information.
+"""
 
+DEV_HANDLER = CommandHandler(("adddev", "addarcane"), adddev)
+SUDO_HANDLER = CommandHandler(("addsudo", "addzero"), addsudo)
+SUPPORT_HANDLER = CommandHandler(("addsupport", "addfirst"), addsupport)
+TIGER_HANDLER = CommandHandler(("addsupportmage", "addtiger"), addtiger)
+WHITELIST_HANDLER = CommandHandler(("addsaint", "addwolf"), addwhitelist)
 
-DEV_HANDLER = CommandHandler(("adddev", "addconductor"), adddev)
-SUDO_HANDLER = CommandHandler(("addsudo", "addmusicart"), addsudo)
-SUPPORT_HANDLER = CommandHandler(("addsupport", "addd2slayer"), addsupport)
-TIGER_HANDLER = CommandHandler(("adddefend", "addtiger"), addtiger)
-WHITELIST_HANDLER = CommandHandler(("addmelcr", "addwolf"), addwhitelist)
-
-RMPIRO_HANDLER = CommandHandler(("rmdev", "rmconductor"), rmdev)
-UNSUDO_HANDLER = CommandHandler(("removesudo", "rmmusicart"), removesudo)
-UNSUPPORT_HANDLER = CommandHandler(("removesupport", "rmd2slayer"),
+RMPIRO_HANDLER = CommandHandler(("rmdev", "rmarcane"), rmdev)
+UNSUDO_HANDLER = CommandHandler(("removesudo", "rmzero"), removesudo)
+UNSUPPORT_HANDLER = CommandHandler(("removesupport", "rmfirst"),
                                    removesupport)
-UNTIGER_HANDLER = CommandHandler(("rmdefend"), removetiger)
-UNWHITELIST_HANDLER = CommandHandler(("removewhitelist", "rmmelcr"),
+UNTIGER_HANDLER = CommandHandler(("rmdefend", "rmsupportmage"), removetiger)
+UNWHITELIST_HANDLER = CommandHandler(("removewhitelist", "rmsaint"),
                                      removewhitelist)
 
-WHITELISTLIST_HANDLER = CommandHandler(["whitelist", "mel_creators"],
+WHITELISTLIST_HANDLER = CommandHandler(["whitelist", "saints"],
                                        whitelist)
-TIGERLIST_HANDLER = CommandHandler(["defenders", "tigerlist"], tigerlist)
-SUPPORTLIST_HANDLER = CommandHandler(["supportlist", "d2slayers"], supportlist)
-SUDOLIST_HANDLER = CommandHandler(["sudolist", "musicarts"], sudolist)
-DEVLIST_HANDLER = CommandHandler(["devlist", "conductors"], devlist)
+TIGERLIST_HANDLER = CommandHandler(["supportmages", "tigerlist"], tigerlist)
+SUPPORTLIST_HANDLER = CommandHandler(["supportlist", "listfirststage"], supportlist)
+SUDOLIST_HANDLER = CommandHandler(["sudolist", "listzerostage"], sudolist)
+DEVLIST_HANDLER = CommandHandler(["devlist", "listarcanes"], devlist)
 
 dispatcher.add_handler(DEV_HANDLER)
 dispatcher.add_handler(SUDO_HANDLER)
@@ -676,6 +751,7 @@ dispatcher.add_handler(SUPPORTLIST_HANDLER)
 dispatcher.add_handler(SUDOLIST_HANDLER)
 dispatcher.add_handler(DEVLIST_HANDLER)
 
+__mod_name__ = "Disasters"
 __handlers__ = [
     DEV_HANDLER, SUDO_HANDLER, SUPPORT_HANDLER, TIGER_HANDLER, WHITELIST_HANDLER,
     RMPIRO_HANDLER, UNSUDO_HANDLER, UNSUPPORT_HANDLER, UNTIGER_HANDLER, UNWHITELIST_HANDLER,
