@@ -61,9 +61,9 @@ if ENV:
 
     JOIN_LOGGER = os.environ.get("JOIN_LOGGER", None)
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
-    REQUEST_CHAT_ID = os.environ.get("REQUEST_CHAT_ID", None)
-    SUPPORT_CHAT_ID = os.environ.get("SUPPORT_CHAT_ID", None)
-    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
+    REQUEST_CHAT_ID = os.environ.get("REQUEST_CHAT_ID", None) #Added by @yameteee_yamete_kudasai ### Note : you can add this var to Heroku if you need /request <anime name> command to work, any id mentioned here will get the requests of this command.
+    SUPPORT_CHAT_ID = os.environ.get("SUPPORT_CHAT_ID", None) #Added by @yameteee_yamete_kudasai ### Note : Add some support bug channel ID, so /bug <bug details> will be targeted there.
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None) #Some fool had hardcoded this thing, use your own ARQ bruh, I won't give mine - @yameteee_yamete_kudasai
     try:
         DRAGONS = {int(x) for x in os.environ.get("DRAGONS", "").split()}
         DEV_USERS = {int(x) for x in os.environ.get("DEV_USERS", "").split()}
