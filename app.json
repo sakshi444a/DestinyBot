@@ -1,5 +1,5 @@
 {
-      "name": "Unmei (Destiny) Bot",
+      "name": " EVA ROBOT(EVA) Bot",
       "description": "A Powerful  Telegram group management bot with anime theme 'Takt OP.Destiny'.",
       "keywords": [
          "telegram",
@@ -9,8 +9,8 @@
          "naorobot"
       ],
     
-   "logo":    "https://telegra.ph/file/3aacd6c0cfe8c852e43c0.jpg",  
-   "repository": "https://github.com/DarkSoulxUltra/DestinyBot",
+   "logo":    "https://te.legra.ph/file/68e2e67944bbd0d0d0c78.jpg",  
+   "repository": "https://github.com/sakshi444a/DestinyBot",
    "addons": [
           {
          "options": {
