@@ -1,7 +1,7 @@
 
-# Destiny Robot
-![Unmei (Destiny)](https://telegra.ph/file/cb57c2af871c60bfdf732.jpg)
-# Unmei Destiny
+# Eva Robot
+![Unmei (EVA)](https://te.legra.ph/file/68e2e67944bbd0d0d0c78.jpg)
+#  EVA
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/729d680436084e0a9cb16f0e875dc097)](https://www.codacy.com/gh/DarkSoulxUltra/DestinyBot/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DarkSoulxUltra/DestinyBot&amp;utm_campaign=Badge_Grade_Settings)[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/DarkSoulxUltra/DestinyBot/graphs/commit-activity) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://perso.crans.org/besson/LICENSE.html) [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com) [![Updates channel!](https://img.shields.io/badge/Join%20Channel-!-red)](https://t.me/unmei_updates)
 
 It is a Telegram group management bot running on python3 with a sqlalchemy database and the theme persona to make Unmei is suitable for Anime and Manga group chats.
@@ -21,12 +21,12 @@ Can be found on telegram as [Unmei (Destiny)](https://t.me/Destiny_x_Bot).
 
 ### Support
 <p>
-<a href="https://t.me/unmei_support"> <img src="https://img.shields.io/badge/Support-Chat-blue?&logo=telegram" alt="Support Chat" /> </a><br>
-<a href="https://t.me/unmei_updates"> <img src="https://img.shields.io/badge/Update-Channel-blue?&logo=telegram" alt="Update Channel" /> </a><br>
+<a href="https://t.me/secretland_xd"> <img src="https://img.shields.io/badge/Support-Chat-blue?&logo=telegram" alt="Support Chat" /> </a><br>
+<a href="https://t.me/sfl_network"> <img src="https://img.shields.io/badge/Update-Channel-blue?&logo=telegram" alt="Update Channel" /> </a><br>
 </p>
 
 ## Credits -
-• [Base Repo](https://github.com/kennedy-ex/EmikoRobot)
+• [Base Repo](https://github.com/sakshi444a/EmikoRobot)
 
 • [Sena](https://github.com/kennedy-ex)
 
